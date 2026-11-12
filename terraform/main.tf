@@ -187,4 +187,10 @@ resource "aws_ecs_service" "reto" {
   tags = {
     Project = "reto-examen"
   }
+
+  lifecycle {
+    ignore_changes = [
+      task_definition
+    ]
+  }
 }
